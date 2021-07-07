@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/math-iter-special-havercos",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Create an iterator which computes the half-value versed cosine for each iterated value.",
   "license": "Apache-2.0",
   "author": {
