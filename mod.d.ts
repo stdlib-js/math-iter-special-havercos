@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2020 The Stdlib Authors.
@@ -16,16 +16,27 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { Iterator as Iter, IterableIterator } from '@stdlib/types/iter';
+
+// Define a union type representing both iterable and non-iterable iterators:
+type Iterator = Iter | IterableIterator;
 
 /**
-* Create an iterator which iteratively computes the half-value versed cosine.
+* Returns an iterator which iteratively computes the half-value versed cosine.
 *
-* @module @stdlib/math-iter-special-havercos
+* ## Notes
+*
+* -   If an environment supports `Symbol.iterator` **and** a provided iterator is iterable, the returned iterator is iterable.
+*
+* @param iterator - input iterator
+* @returns iterator
 *
 * @example
-* var uniform = require( '@stdlib/random-iter-uniform' );
-* var iterHavercos = require( '@stdlib/math-iter-special-havercos' );
+* var uniform = require( `@stdlib/random/iter/uniform` );
 *
 * var iter = iterHavercos( uniform( 0.0, 6.28 ) );
 *
@@ -40,12 +51,9 @@
 *
 * // ...
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function iterHavercos( iterator: Iterator ): Iterator;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = iterHavercos;
